@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAR Calculator - Kalkulator Sains Moderen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <script src="js/script.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            orange: {
+              500: "#FF9A03",
+              600: "#e78800", // untuk hover jika ingin konsisten
+              100: "#ffe7c2", // background ringan
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Dark Mode Toggle -->
+    <div class="fixed bottom-6 right-6 z-50 dark-mode-toggle bg-orange-500 text-white p-3 rounded-full shadow-lg" onclick="toggleDarkMode()">
+      <i class="fas fa-moon text-xl"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-40">
+      <div class="container mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <div class="mr-3">
+              <img src="img/logo.png" alt="RAR Calculator Logo" class="w-10 h-10 object-contain" />
+            </div>
+            <span class="text-xl font-bold">RAR Calculator</span>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#features" class="hover:text-orange-500">Fitur</a>
+            <a href="#gallery" class="hover:text-orange-500">Galeri</a>
+            <a href="#comparison" class="hover:text-orange-500">Perbandingan</a>
+            <a href="#testimonials" class="hover:text-orange-500">Testimoni</a>
+            <a href="#faq" class="hover:text-orange-500">FAQ</a>
+          </div>
+          <a href="#download" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition duration-300"> Unduh Sekarang </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+      <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">RAR Calculator</h1>
+          <p class="text-xl md:text-2xl mb-8">
+            Lebih dari Kalkulator Biasa. <br />
+            <span class="font-bold">RAR = Rasional, Akurat, Responsif</span>
+          </p>
+          <p class="text-lg mb-8">Kalkulator sains modern dengan antarmuka intuitif dan performa optimal untuk semua kebutuhan perhitungan ilmiah Anda.</p>
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#download" class="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-bold text-center transition duration-300"> <i class="fab fa-google-play mr-2"></i> Unduh di Play Store </a>
+            <a href="#features" class="bg-white hover:bg-gray-100 text-orange-500 px-6 py-3 rounded-lg font-bold text-center transition duration-300"> Jelajahi Fitur <i class="fas fa-arrow-down ml-2"></i> </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <div class="calculator-mockup bg-gray-800 rounded-3xl p-4 w-64 h-auto relative">
+            <div class="bg-gray-900 rounded-t-2xl p-3">
+              <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+            </div>
+            <div class="bg-gray-700 rounded-lg p-3 mb-3">
+              <div class="text-right text-gray-300 text-sm">sin(45) + log(100)</div>
+              <div class="text-right text-white text-2xl font-bold">1.7071</div>
+            </div>
+            <div class="grid grid-cols-4 gap-2">
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">sin</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">cos</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">tan</button>
+              <button class="bg-orange-500 hover:bg-orange-400 text-white rounded-lg p-2">=</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">log</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">ln</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">^</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">√</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">7</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">8</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">9</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">DEL</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">4</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">5</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">6</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">AC</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">1</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">2</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">3</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">M+</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">0</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">.</button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg p-2">(-)</button>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white rounded-lg p-2">MR</button>
+            </div>
+            <div class="absolute -bottom-4 -right-4 bg-orange-500 text-white p-2 rounded-full">
+              <i class="fas fa-bolt text-xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold mb-4">Fitur Unggulan RAR Calculator</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Dibekali dengan berbagai fitur canggih untuk memenuhi semua kebutuhan perhitungan ilmiah Anda.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+            <div class="bg-orange-100 text-orange-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-square-root-alt text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Perhitungan Ilmiah Lengkap</h3>
+            <p class="text-gray-600">Dukung trigonometri, logaritma, eksponensial, statistik, dan berbagai fungsi matematika lanjutan lainnya dengan presisi tinggi.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+            <div class="bg-orange-100 text-orange-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-moon text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">UI Modern dengan Mode Gelap</h3>
+            <p class="text-gray-600">Antarmuka yang bersih dan intuitif dengan dukungan mode terang dan gelap untuk kenyamanan mata dalam berbagai kondisi pencahayaan.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+            <div class="bg-orange-100 text-orange-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-history text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Riwayat & Memori Kalkulasi</h3>
+            <p class="text-gray-600">Simpan dan kelola riwayat perhitungan serta gunakan fitur memori untuk menyimpan nilai penting yang sering digunakan.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+            <div class="bg-orange-100 text-orange-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-keyboard text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Penulisan Ekspresi Natural</h3>
+            <p class="text-gray-600">Tulis ekspresi matematika secara alami seperti di buku teks (misal: 2π, 5², √(4+5)) tanpa perlu format khusus.</p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+            <div class="bg-orange-100 text-orange-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-mobile-alt text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Responsif & Optimal</h3>
+            <p class="text-gray-600">Desain yang responsif dan performa optimal di berbagai perangkat Android, dari smartphone entry-level hingga flagship.</p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+            <div class="bg-orange-100 text-orange-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-tachometer-alt text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Ringan & Cepat</h3>
+            <p class="text-gray-600">Ukuran aplikasi kecil (kurang dari 5MB) dengan waktu muat instan dan perhitungan yang sangat cepat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery/Demo Section -->
+    <section id="gallery" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold mb-4">Galeri Antarmuka</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Lihat bagaimana RAR Calculator memberikan pengalaman kalkulasi yang menyenangkan dan efisien.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Screenshot 1 -->
+          <div class="screenshot bg-white p-2 rounded-xl shadow-md overflow-hidden">
+            <img src="img/light.png" alt="Light Mode UI" class="w-[90%] h-auto mx-auto rounded-lg object-contain p-2" />
+            <div class="p-4">
+              <h3 class="font-bold">Mode Terang</h3>
+              <p class="text-sm text-gray-600">Antarmuka bersih dengan tema terang</p>
+            </div>
+          </div>
+
+          <!-- Screenshot 2 -->
+          <div class="screenshot bg-white p-2 rounded-xl shadow-md overflow-hidden">
+            <img src="img/mockupbanner.png" alt="Scientific Functions" class="w-full h-auto rounded-lg" />
+            <div class="p-4 mt-16">
+              <h3 class="font-bold">Fungsi Sains</h3>
+              <p class="text-sm text-gray-600">Akses mudah ke semua fungsi ilmiah</p>
+            </div>
+          </div>
+
+          <!-- Screenshot 3 -->
+          <div class="screenshot bg-white p-2 rounded-xl shadow-md overflow-hidden">
+            <img src="img/dark.png" alt="Dark Mode UI" class="w-[90%] h-auto mx-auto rounded-lg object-contain p-2" />
+            <div class="p-4">
+              <h3 class="font-bold">Mode Gelap</h3>
+              <p class="text-sm text-gray-600">Tema gelap yang nyaman di malam hari</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <button onclick="showMoreScreenshots()" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Lihat Lebih Banyak <i class="fas fa-arrow-down ml-2"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold mb-4">Mengapa RAR Calculator Lebih Unggul?</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Bandingkan dengan kalkulator sains lainnya dan temukan perbedaannya.</p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="comparison-table w-full bg-white rounded-xl shadow-md overflow-hidden">
+            <thead class="bg-orange-500 text-white">
+              <tr>
+                <th class="text-left py-4 px-6">Fitur</th>
+                <th class="py-4 px-6">RAR Calculator</th>
+                <th class="py-4 px-6">Kalkulator A</th>
+                <th class="py-4 px-6">Kalkulator B</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-medium">Ukuran Aplikasi</td>
+                <td class="text-center"><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">~4MB</span></td>
+                <td class="text-center">~15MB</td>
+                <td class="text-center">~25MB</td>
+              </tr>
+              <tr>
+                <td class="font-medium">Mode Gelap</td>
+                <td class="text-center"><i class="fas fa-check text-green-500"></i></td>
+                <td class="text-center"><i class="fas fa-times text-red-500"></i></td>
+                <td class="text-center"><i class="fas fa-check text-green-500"></i></td>
+              </tr>
+              <tr>
+                <td class="font-medium">Notasi Natural</td>
+                <td class="text-center"><i class="fas fa-check text-green-500"></i></td>
+                <td class="text-center"><i class="fas fa-check text-green-500"></i></td>
+                <td class="text-center"><i class="fas fa-times text-red-500"></i></td>
+              </tr>
+              <tr>
+                <td class="font-medium">Riwayat Kalkulasi</td>
+                <td class="text-center"><i class="fas fa-check text-green-500"></i></td>
+                <td class="text-center"><i class="fas fa-check text-green-500"></i></td>
+                <td class="text-center"><i class="fas fa-check text-green-500"></i></td>
+              </tr>
+              <tr>
+                <td class="font-medium">Fungsi Tambahan</td>
+                <td class="text-center">50+</td>
+                <td class="text-center">30+</td>
+                <td class="text-center">40+</td>
+              </tr>
+              <tr>
+                <td class="font-medium">Kecepatan Perhitungan</td>
+                <td class="text-center"><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Sangat Cepat</span></td>
+                <td class="text-center">Cepat</td>
+                <td class="text-center">Sedang</td>
+              </tr>
+              <tr>
+                <td class="font-medium">Iklan</td>
+                <td class="text-center"><i class="fas fa-times text-red-500"></i></td>
+                <td class="text-center"><i class="fas fa-check text-red-500"></i></td>
+                <td class="text-center"><i class="fas fa-check text-red-500"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-orange-50 p-6 rounded-xl border border-orange-100">
+            <h3 class="font-bold text-lg mb-3">Ukuran Optimal</h3>
+            <p class="text-gray-600">Dengan ukuran hanya ~4MB, RAR Calculator sangat ringan dibandingkan kompetitor yang bisa mencapai 25MB.</p>
+          </div>
+          <div class="bg-orange-50 p-6 rounded-xl border border-orange-100">
+            <h3 class="font-bold text-lg mb-3">Tanpa Iklan</h3>
+            <p class="text-gray-600">Kami percaya alat produktivitas harus bebas gangguan. RAR Calculator 100% tanpa iklan.</p>
+          </div>
+          <div class="bg-orange-50 p-6 rounded-xl border border-orange-100">
+            <h3 class="font-bold text-lg mb-3">Perhitungan Presisi</h3>
+            <p class="text-gray-600">Menggunakan algoritma terbaik untuk memastikan akurasi maksimal dalam setiap perhitungan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold mb-4">Apa Kata Pengguna?</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Dengarkan pengalaman nyata dari pengguna RAR Calculator.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
+                <i class="fas fa-user text-orange-500 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Andi Pratama</h4>
+                <p class="text-gray-500 text-sm">Mahasiswa Teknik</p>
+              </div>
+            </div>
+            <div class="flex mb-2">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <p class="text-gray-600">"Sebagai mahasiswa teknik, saya butuh kalkulator yang lengkap tapi ringan. RAR Calculator sempurna! Tidak lag dan semua fungsi yang saya butuhkan ada."</p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
+                <i class="fas fa-user text-orange-500 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Budi Santoso</h4>
+                <p class="text-gray-500 text-sm">Guru Matematika</p>
+              </div>
+            </div>
+            <div class="flex mb-2">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star-half-alt text-yellow-400"></i>
+            </div>
+            <p class="text-gray-600">"Saya rekomendasikan RAR Calculator ke murid-murid saya karena notasi naturalnya memudahkan mereka memahami ekspresi matematika."</p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
+                <i class="fas fa-user text-orange-500 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Citra Dewi</h4>
+                <p class="text-gray-500 text-sm">Aktivis Lingkungan</p>
+              </div>
+            </div>
+            <div class="flex mb-2">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <p class="text-gray-600">"Mode gelapnya sangat membantu saat bekerja di malam hari. Ukurannya juga kecil jadi tidak memakan banyak ruang di smartphone saya yang sudah penuh."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold mb-4">Pertanyaan yang Sering Diajukan</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Temukan jawaban untuk pertanyaan umum tentang RAR Calculator.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          <!-- FAQ 1 -->
+          <div class="faq-item bg-gray-50 p-6 rounded-xl cursor-pointer" onclick="toggleFAQ(1)">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold">Apakah RAR Calculator gratis?</h3>
+              <i class="fas fa-chevron-down text-orange-500 transition-transform duration-300" id="faq-icon-1"></i>
+            </div>
+            <p class="text-gray-600 mt-3 hidden" id="faq-answer-1">Ya, RAR Calculator sepenuhnya gratis tanpa biaya tersembunyi. Kami berkomitmen untuk menyediakan alat kalkulasi berkualitas tinggi tanpa membebani pengguna.</p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item bg-gray-50 p-6 rounded-xl cursor-pointer" onclick="toggleFAQ(2)">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold">Perangkat apa saja yang didukung?</h3>
+              <i class="fas fa-chevron-down text-orange-500 transition-transform duration-300" id="faq-icon-2"></i>
+            </div>
+            <p class="text-gray-600 mt-3 hidden" id="faq-answer-2">
+              RAR Calculator kompatibel dengan perangkat Android versi 5.0 (Lollipop) ke atas. Kami mengoptimalkan aplikasi untuk berjalan lancar bahkan di perangkat dengan spesifikasi rendah.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item bg-gray-50 p-6 rounded-xl cursor-pointer" onclick="toggleFAQ(3)">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold">Bagaimana cara mengaktifkan mode gelap?</h3>
+              <i class="fas fa-chevron-down text-orange-500 transition-transform duration-300" id="faq-icon-3"></i>
+            </div>
+            <p class="text-gray-600 mt-3 hidden" id="faq-answer-3">
+              Anda dapat mengaktifkan mode gelap melalui menu pengaturan di aplikasi. RAR Calculator juga mendukung pengalihan otomatis berdasarkan waktu atau mengikuti pengaturan sistem perangkat Anda.
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item bg-gray-50 p-6 rounded-xl cursor-pointer" onclick="toggleFAQ(4)">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold">Apakah data perhitungan saya disimpan?</h3>
+              <i class="fas fa-chevron-down text-orange-500 transition-transform duration-300" id="faq-icon-4"></i>
+            </div>
+            <p class="text-gray-600 mt-3 hidden" id="faq-answer-4">Riwayat perhitungan hanya disimpan secara lokal di perangkat Anda dan tidak dikirim ke server manapun. Anda dapat menghapus riwayat kapan saja melalui menu pengaturan.</p>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item bg-gray-50 p-6 rounded-xl cursor-pointer" onclick="toggleFAQ(5)">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold">Kapan versi iOS akan dirilis?</h3>
+              <i class="fas fa-chevron-down text-orange-500 transition-transform duration-300" id="faq-icon-5"></i>
+            </div>
+            <p class="text-gray-600 mt-3 hidden" id="faq-answer-5">Saat ini RAR Calculator hanya tersedia untuk platform Android. Versi iOS sedang dalam pengembangan dan diharapkan akan dirilis dalam beberapa bulan mendatang.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-16 gradient-bg text-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Unduh RAR Calculator Sekarang</h2>
+          <p class="text-xl max-w-2xl mx-auto">Tingkatkan produktivitas matematika Anda dengan kalkulator sains modern yang ringan dan powerful.</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+          <!-- Play Store Button -->
+          <div class="text-center">
+            <a href="#" class="bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-lg font-bold inline-flex items-center transition duration-300">
+              <i class="fab fa-google-play text-3xl mr-3"></i>
+              <div class="text-left">
+                <div class="text-xs">Dapatkan di</div>
+                <div class="text-xl">Google Play</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- QR Code -->
+          <div class="text-center">
+            <div class="qr-code bg-white p-3 rounded-lg inline-block">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store/apps/details?id=com.ridzkal.rarcalculator" alt="QR Code Download" class="w-32 h-32" />
+            </div>
+            <p class="mt-2 text-sm">Scan untuk mengunduh</p>
+          </div>
+
+          <!-- App Info -->
+          <div class="text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start mb-2">
+              <div class="bg-white text-orange-500 p-1 rounded mr-2">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <span class="font-bold">RAR Calculator</span>
+            </div>
+            <div class="flex items-center justify-center md:justify-start mb-2">
+              <div class="bg-white text-orange-500 p-1 rounded mr-2">
+                <i class="fas fa-download"></i>
+              </div>
+              <span>Ukuran: 4.2MB</span>
+            </div>
+            <div class="flex items-center justify-center md:justify-start">
+              <div class="bg-white text-orange-500 p-1 rounded mr-2">
+                <i class="fas fa-star"></i>
+              </div>
+              <span>Rating: 4.9/5 (1.2K+ ulasan)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- About -->
+          <div>
+            <h3 class="text-white text-lg font-bold mb-4">Tentang</h3>
+            <p class="mb-4">RAR Calculator dikembangkan untuk memberikan pengalaman kalkulasi ilmiah terbaik dengan antarmuka modern dan performa optimal.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-orange-500 hover:text-orange-400">
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <a href="#" class="text-orange-500 hover:text-orange-400">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a href="#" class="text-orange-500 hover:text-orange-400">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Developer -->
+          <div>
+            <h3 class="text-white text-lg font-bold mb-4">Pengembang</h3>
+            <p class="mb-2">
+              <span class="text-orange-500">Ridzkal Jamil</span><br />
+              Web & Mobile Developer<br />
+              Bekasi, Indonesia
+            </p>
+            <a href="https://github.com/ridzkaljamil" class="text-orange-500 hover:text-orange-400 inline-flex items-center"> <i class="fab fa-github mr-2"></i> ridzkaljamil </a>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h3 class="text-white text-lg font-bold mb-4">Tautan</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-orange-500">Ketentuan Layanan</a></li>
+              <li><a href="#" class="hover:text-orange-500">Kebijakan Privasi</a></li>
+              <li><a href="#" class="hover:text-orange-500">Kontak Kami</a></li>
+              <li><a href="#" class="hover:text-orange-500">Beri Masukan</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h3 class="text-white text-lg font-bold mb-4">Berlangganan</h3>
+            <p class="mb-4">Dapatkan pembaruan tentang fitur baru dan peningkatan aplikasi.</p>
+            <div class="flex">
+              <input type="email" placeholder="Email Anda" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-orange-500 w-full" />
+              <button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-r-lg">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p>&copy; 2023 RAR Calculator. Seluruh hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
