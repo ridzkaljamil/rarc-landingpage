@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RAR Calculator - Kalkulator Sains Moderen</title>
+    <link rel="icon" href="img/logo.png" type="image/png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -25,7 +26,7 @@
     };
   </script>
 
-  <body class="bg-gray-50 text-gray-800">
+  <body id="home" class="bg-gray-50 text-gray-800">
     <!-- Dark Mode Toggle -->
     <div class="fixed bottom-6 right-6 z-50 dark-mode-toggle bg-orange-500 text-white p-3 rounded-full shadow-lg" onclick="toggleDarkMode()">
       <i class="fas fa-moon text-xl"></i>
@@ -35,12 +36,12 @@
     <nav class="bg-white shadow-md sticky top-0 z-40">
       <div class="container mx-auto px-6 py-3">
         <div class="flex items-center justify-between">
-          <div class="flex items-center">
+          <a href="#home" class="flex items-center hover:opacity-80 transition duration-300">
             <div class="mr-3">
               <img src="img/logo.png" alt="RAR Calculator Logo" class="w-10 h-10 object-contain" />
             </div>
             <span class="text-xl font-bold">RAR Calculator</span>
-          </div>
+          </a>
           <div class="hidden md:flex space-x-8">
             <a href="#features" class="hover:text-orange-500">Fitur</a>
             <a href="#gallery" class="hover:text-orange-500">Galeri</a>
@@ -453,7 +454,12 @@
         <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
           <!-- Play Store Button -->
           <div class="text-center">
-            <a href="#" class="bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-lg font-bold inline-flex items-center transition duration-300">
+            <a
+              href="https://drive.google.com/file/d/1i9fd5Mfszqa4P6-Qk5n1yBMf4ubfVtzy/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-lg font-bold inline-flex items-center transition duration-300"
+            >
               <i class="fab fa-google-play text-3xl mr-3"></i>
               <div class="text-left">
                 <div class="text-xs">Dapatkan di</div>
@@ -465,7 +471,7 @@
           <!-- QR Code -->
           <div class="text-center">
             <div class="qr-code bg-white p-3 rounded-lg inline-block">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store/apps/details?id=com.ridzkal.rarcalculator" alt="QR Code Download" class="w-32 h-32" />
+              <img src="img/qrcodedownload.png" alt="QR Code Download" class="w-32 h-32 object-contain" />
             </div>
             <p class="mt-2 text-sm">Scan untuk mengunduh</p>
           </div>
@@ -504,7 +510,7 @@
             <h3 class="text-white text-lg font-bold mb-4">Tentang</h3>
             <p class="mb-4">RAR Calculator dikembangkan untuk memberikan pengalaman kalkulasi ilmiah terbaik dengan antarmuka modern dan performa optimal.</p>
             <div class="flex space-x-4">
-              <a href="#" class="text-orange-500 hover:text-orange-400">
+              <a href="https://github.com/ridzkaljamil/rar-calculator" class="text-orange-500 hover:text-orange-400">
                 <i class="fab fa-github text-xl"></i>
               </a>
               <a href="#" class="text-orange-500 hover:text-orange-400">
@@ -531,10 +537,10 @@
           <div>
             <h3 class="text-white text-lg font-bold mb-4">Tautan</h3>
             <ul class="space-y-2">
-              <li><a href="#" class="hover:text-orange-500">Ketentuan Layanan</a></li>
-              <li><a href="#" class="hover:text-orange-500">Kebijakan Privasi</a></li>
-              <li><a href="#" class="hover:text-orange-500">Kontak Kami</a></li>
-              <li><a href="#" class="hover:text-orange-500">Beri Masukan</a></li>
+              <li><a href="#" onclick="openModal('terms', event)" class="hover:text-orange-500">Ketentuan Layanan</a></li>
+              <li><a href="#" onclick="openModal('privacy', event)" class="hover:text-orange-500">Kebijakan Privasi</a></li>
+              <li><a href="#" onclick="openModal('contact', event)" class="hover:text-orange-500">Kontak Kami</a></li>
+              <li><a href="#" onclick="openModal('feedback', event)" class="hover:text-orange-500">Beri Masukan</a></li>
             </ul>
           </div>
 
@@ -552,9 +558,19 @@
         </div>
 
         <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p>&copy; 2023 RAR Calculator. Seluruh hak cipta dilindungi.</p>
+          <p>&copy; 2025 RAR Calculator. Seluruh hak cipta dilindungi.</p>
         </div>
       </div>
     </footer>
+    <!-- Modal -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+      <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+        <button onclick="closeModal()" class="absolute top-2 right-3 text-gray-500 hover:text-black text-xl">&times;</button>
+        <h2 id="modal-title" class="text-xl font-bold mb-4">Judul</h2>
+        <p id="modal-content" class="text-gray-700 text-sm leading-relaxed">
+          <!-- Konten akan diisi oleh JS -->
+        </p>
+      </div>
+    </div>
   </body>
 </html>

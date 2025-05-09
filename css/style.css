@@ -95,3 +95,7 @@ body {
 .qr-code:hover {
   transform: scale(1.05);
 }
+
+html {
+  scroll-behavior: smooth;
+}
