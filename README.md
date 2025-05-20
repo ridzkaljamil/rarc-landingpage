@@ -1,6 +1,6 @@
 # 🧮 RAR Calculator - Kalkulator Sains Modern
 
-![Logo Aplikasi](img\logo.png)
+![Logo Aplikasi](img/logo.png)
 
 Landing page resmi untuk aplikasi **RAR Calculator**, sebuah kalkulator sains modern dengan antarmuka intuitif, mode terang & gelap, dan berbagai fitur canggih seperti fungsi trigonometri, logaritma, statistik, hingga riwayat kalkulasi.
 
